@@ -43,7 +43,9 @@ app.get('/', (req, res) => {
 // app.get('/login', function (req, res) {
 //   res.sendFile(path.join(__dirname, '../index.html'));
 // });
-app.get('/home', usersControllers.isAuth);
+app.get('/home', usersControllers.isAuth, (req, res) => {
+  res.status(200).json({ status: 'success' });
+});
 
 //Routes
 app.use('/events', eventsRouter);

@@ -36,6 +36,7 @@ usersControllers.isAuth = (req, res) => {
     console.log(err);
     if (err) return res.sendStatus(403);
     req.user = user;
+    next();
   });
 };
 
